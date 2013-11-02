@@ -11,6 +11,32 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+Installation Guide
+------------------
+
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    installation_guide
+
+Administration Guide
+--------------------
+
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    administration_guide
+
+Developer's Guide
+------------------
+
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    developer_guide
 
 
 Indices and tables
