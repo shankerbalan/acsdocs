@@ -6,17 +6,12 @@
 Welcome to CloudStack Documentation's !
 =======================================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
 Installation Guide
 ------------------
 
 .. toctree::
     :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     installation_guide
 
@@ -25,7 +20,7 @@ Administration Guide
 
 .. toctree::
     :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     administration_guide
 
@@ -34,7 +29,7 @@ Developer's Guide
 
 .. toctree::
     :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     developer_guide
 
