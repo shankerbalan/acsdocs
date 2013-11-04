@@ -18,15 +18,6 @@ Installation Guide
 
     installation_guide
 
-Administration Guide
---------------------
-
-.. toctree::
-    :glob:
-    :maxdepth: 2
-
-    administration_guide
-
 Developer's Guide
 ------------------
 
@@ -35,7 +26,7 @@ Developer's Guide
     :maxdepth: 3
 
     developer_guide
-
+    prerequisites
 
 Indices and tables
 ==================
