@@ -14,7 +14,7 @@ Installation Guide
 
 .. toctree::
     :glob:
-    :maxdepth: 2
+    :maxdepth: 3
 
     installation_guide
 
@@ -32,7 +32,7 @@ Developer's Guide
 
 .. toctree::
     :glob:
-    :maxdepth: 2
+    :maxdepth: 3
 
     developer_guide
 
