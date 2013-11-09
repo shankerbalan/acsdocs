@@ -6,12 +6,35 @@
 Welcome to CloudStack Documentation's !
 =======================================
 
-Contents:
+.. figure:: /_static/images/acslogo.png
+    :align: center
+
+Overview and Concepts
+---------------------
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    concepts
+
+Installation Guide
+------------------
 
 .. toctree::
-   :maxdepth: 2
+    :glob:
+    :maxdepth: 3
 
+    installation_guide
 
+Developer's Guide
+------------------
+
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    developer_guide
+    prerequisites
 
 Indices and tables
 ==================
