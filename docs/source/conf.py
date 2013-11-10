@@ -64,7 +64,7 @@ release = '4.2.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -183,13 +183,13 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'CloudStackDocumentation.tex', u'CloudStack Documentation Documentation',
+  ('index', 'CloudStackDocumentation.tex', u'CloudStack Documentation',
    u'Apache CloudStack', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo = _static/images/acslogo.png
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cloudstackdocumentation', u'CloudStack Documentation Documentation',
+    ('index', 'cloudstackdocumentation', u'CloudStack Documentation',
      [u'Apache CloudStack'], 1)
 ]
 
@@ -227,7 +227,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'CloudStackDocumentation', u'CloudStack Documentation Documentation',
+  ('index', 'CloudStackDocumentation', u'CloudStack Documentation',
    u'Apache CloudStack', 'CloudStackDocumentation', 'One line description of project.',
    'Miscellaneous'),
 ]
