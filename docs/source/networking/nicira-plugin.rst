@@ -29,9 +29,7 @@ the Nicira NVP Plugin.
 
 Table: Supported Services
 
-    **Note**
-
-    The Virtual Networking service was originally called 'Connectivity'
+.. note::   The Virtual Networking service was originally called 'Connectivity'
     in CloudStack 4.0
 
 The following hypervisors are supported by the Nicira NVP Plugin.
@@ -46,9 +44,7 @@ The following hypervisors are supported by the Nicira NVP Plugin.
 
 Table: Supported Hypervisors
 
-    **Note**
-
-    Please refer to the Nicira NVP configuration guide on how to prepare
+.. note::    Please refer to the Nicira NVP configuration guide on how to prepare
     the hypervisors for Nicira NVP integration.
 
 Configuring the Nicira NVP Plugin
@@ -74,9 +70,8 @@ Make sure you have the following information ready:
 -  The UUID of the Gateway Service used to provide router and NAT
    services.
 
-    **Note**
 
-    The gateway service uuid is optional and is used for Layer 3
+.. note::    The gateway service uuid is optional and is used for Layer 3
     services only (SourceNat, StaticNat and PortForwarding)
 
 Zone Configuration
@@ -86,9 +81,7 @@ CloudStack needs to have at least one physical network with the isolation
 method set to "STT". This network should be enabled for the Guest
 traffic type.
 
-    **Note**
-
-    The Guest traffic type should be configured with the traffic label
+.. note::    The Guest traffic type should be configured with the traffic label
     that matches the name of the Integration Bridge on the hypervisor.
     See the Nicira NVP User Guide for more details on how to set this up
     in XenServer or KVM.
@@ -105,9 +98,7 @@ Service Providers" configuration of the physical network with the STT
 isolation type. Navigate to the Nicira NVP provider and press the
 "Enable Provider" button.
 
-    **Note**
-
-    CloudStack 4.0 does not have the UI interface to configure the
+.. note::    CloudStack 4.0 does not have the UI interface to configure the
     Nicira NVP plugin. Configuration needs to be done using the API
     directly.
 
@@ -167,9 +158,8 @@ Router.
     :align: center
     :alt: a screenshot of a network offering.
 
-    **Note**
 
-    The tag in the network offering should be set to the name of the
+.. note::    The tag in the network offering should be set to the name of the
     physical network with the NVP provider.
 
 Isolated network with network services. The virtual router is still
@@ -234,9 +224,8 @@ provider 'NiciraNvp'
     :align: center
     :alt: a screenshot of the mysql table.
 
-    **Note**
 
-    When creating a new VPC offering please note that the UI does not
+.. note::    When creating a new VPC offering please note that the UI does not
     allow you to select a VPC offering yet. The VPC needs to be created
     using the API with the offering UUID.
 
@@ -295,9 +284,7 @@ network on the NVP Controller.
 The Nics that are connected to one of the Logical Switches will have
 their Logical Switch Port UUID listed in the nicira\_nvp\_nic\_map table
 
-    **Note**
-
-    All devices created on the NVP Controller will have a tag set to
+.. note::    All devices created on the NVP Controller will have a tag set to
     domain-account of the owner of the network, this string can be used
     to search for items in the NVP Controller.
 
@@ -314,7 +301,7 @@ Plugin
 +---------------------+--------------------------------------------------------------+
 | logicalswitchport   | uuid of the logical switch port for this nic                 |
 +---------------------+--------------------------------------------------------------+
-| nic                 | the CloudStack uuid for this nic, reference to the nics table   |
+| nic                 | the CloudStack uuid for this nic, reference to the nics table| 
 +---------------------+--------------------------------------------------------------+
 
 Table: nicira\_nvp\_nic\_map
@@ -345,9 +332,7 @@ Table: external\_nicira\_nvp\_devices
 
 Table: nicira\_nvp\_router\_map
 
-    **Note**
-
-    nicira\_nvp\_router\_map is only available in CloudStack 4.1 and above
+.. note::    nicira\_nvp\_router\_map is only available in CloudStack 4.1 and above
 
 Revision History
 ----------------

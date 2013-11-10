@@ -12,9 +12,7 @@ http://www.midokura.com/midonet/.
 Features of the MidoNet Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    **Note**
-
-    In CloudStack 4.2.0 only the KVM hypervisor is supported for use in
+.. note::    In CloudStack 4.2.0 only the KVM hypervisor is supported for use in
     combination with MidoNet.
 
 In CloudStack release 4.2.0 this plugin supports several services in the
@@ -84,9 +82,7 @@ section describes the CloudStack side setup.
        <bean id="PublicNetworkGuru" class="com.cloud.network.guru.MidoNetPublicNetworkGuru">
          
 
-    **Note**
-
-    On the compute host, MidoNet takes advantage of per-traffic type VIF
+.. note::    On the compute host, MidoNet takes advantage of per-traffic type VIF
     driver support in CloudStack KVM.
 
     In agent.properties, we set the following to make MidoNet take care
