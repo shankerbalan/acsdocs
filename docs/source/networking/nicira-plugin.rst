@@ -10,7 +10,7 @@ setup can be used by CloudStack to implement isolated guest networks and
 to provide additional services like routing and NAT.
 
 Features of the Nicira NVP Plugin
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following table lists the CloudStack network services provided by
 the Nicira NVP Plugin.
@@ -52,10 +52,10 @@ Table: Supported Hypervisors
     the hypervisors for Nicira NVP integration.
 
 Configuring the Nicira NVP Plugin
-=================================
+---------------------------------
 
 Prerequisites
--------------
+~~~~~~~~~~~~~
 
 Before enabling the Nicira NVP plugin the NVP Controller needs to be
 configured. Please review the NVP User Guide on how to do that.
@@ -80,9 +80,9 @@ Make sure you have the following information ready:
     services only (SourceNat, StaticNat and PortForwarding)
 
 Zone Configuration
-------------------
+~~~~~~~~~~~~~~~~~~
 
-PRODUCT needs to have at least one physical network with the isolation
+CloudStack needs to have at least one physical network with the isolation
 method set to "STT". This network should be enabled for the Guest
 traffic type.
 
@@ -98,7 +98,7 @@ traffic type.
     :alt: a screenshot of a physical network with the STT isolation type
 
 Enabling the service provider
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Nicira NVP provider is disabled by default. Navigate to the "Network
 Service Providers" configuration of the physical network with the STT
@@ -116,9 +116,9 @@ isolation type. Navigate to the Nicira NVP provider and press the
     :alt: a screenshot of an enabled Nicira NVP provider
 
 Device Management
------------------
+~~~~~~~~~~~~~~~~~
 
-In PRODUCT a Nicira NVP setup is considered a "device" that can be added
+In CloudStack a Nicira NVP setup is considered a "device" that can be added
 and removed from a physical network. To complete the configuration of
 the Nicira NVP plugin a device needs to be added to the physical
 network. Press the "Add NVP Controller" button on the provider panel and
@@ -129,7 +129,7 @@ enter the configuration details.
     :alt: a screenshot of the device configuration popup.
 
 Network Offerings
------------------
+~~~~~~~~~~~~~~~~~
 
 Using the Nicira NVP plugin requires a network offering with Virtual
 Networking enabled and configured to use the NiciraNvp element. Typical
@@ -196,13 +196,13 @@ required to provide network services like dns and dhcp.
 Table: Isolated network offering with network services
 
 Using the Nicira NVP plugin with VPC
-====================================
+------------------------------------
 
 Supported VPC features
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
-The Nicira NVP plugin supports PRODUCT VPC to a certain extent. Starting
-with PRODUCT version 4.1 VPCs can be deployed using NVP isolated
+The Nicira NVP plugin supports CloudStack VPC to a certain extent. Starting
+with CloudStack version 4.1 VPCs can be deployed using NVP isolated
 networks.
 
 It is not possible to use a Nicira NVP Logical Router for as a VPC
@@ -212,7 +212,7 @@ It is not possible to connect a private gateway using a Nicira NVP
 Logical Switch
 
 VPC Offering with Nicira NVP
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To allow a VPC to use the Nicira NVP plugin to provision networks, a new
 VPC offering needs to be created which allows the Virtual Networking
@@ -241,7 +241,7 @@ provider 'NiciraNvp'
     using the API with the offering UUID.
 
 VPC Network Offerings
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 The VPC needs specific network offerings with the VPC flag enabled.
 Otherwise these network offerings are identical to regular network
@@ -279,12 +279,12 @@ with the loadbalancing service enabled and one without loadbalancing.
 Table: VPC Network Offering with Loadbalancing
 
 Troubleshooting the Nicira NVP Plugin
-=====================================
+-------------------------------------
 
 UUID References
----------------
+~~~~~~~~~~~~~~~
 
-The plugin maintains several references in the PRODUCT database to items
+The plugin maintains several references in the CloudStack database to items
 created on the NVP Controller.
 
 Every guest network that is created will have its broadcast type set to
@@ -302,7 +302,7 @@ their Logical Switch Port UUID listed in the nicira\_nvp\_nic\_map table
     to search for items in the NVP Controller.
 
 Database tables
----------------
+~~~~~~~~~~~~~~~
 
 The following tables are added to the cloud database for the Nicira NVP
 Plugin
@@ -314,7 +314,7 @@ Plugin
 +---------------------+--------------------------------------------------------------+
 | logicalswitchport   | uuid of the logical switch port for this nic                 |
 +---------------------+--------------------------------------------------------------+
-| nic                 | the PRODUCT uuid for this nic, reference to the nics table   |
+| nic                 | the CloudStack uuid for this nic, reference to the nics table   |
 +---------------------+--------------------------------------------------------------+
 
 Table: nicira\_nvp\_nic\_map
@@ -347,14 +347,14 @@ Table: nicira\_nvp\_router\_map
 
     **Note**
 
-    nicira\_nvp\_router\_map is only available in PRODUCT 4.1 and above
+    nicira\_nvp\_router\_map is only available in CloudStack 4.1 and above
 
 Revision History
-================
+----------------
 
 0-0 Wed Oct 03 2012 Hugo Trippaers hugo@apache.org Documentation created
 for 4.0.0-incubating version of the NVP Plugin 1-0 Wed May 22 2013 Hugo
-Trippaers hugo@apache.org Documentation updated for PRODUCT 4.1.0
+Trippaers hugo@apache.org Documentation updated for CloudStack 4.1.0
 
 .. | nvp-physical-network-stt.png: a screenshot of a physical network with the STT isolation type | image:: ./images/nvp-physical-network-stt.png
 .. | nvp-physical-network-stt.png: a screenshot of an enabled Nicira NVP provider | image:: ./images/nvp-enable-provider.png
