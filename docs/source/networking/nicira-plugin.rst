@@ -93,8 +93,9 @@ traffic type.
     See the Nicira NVP User Guide for more details on how to set this up
     in XenServer or KVM.
 
-| nvp-physical-network-stt.png: a screenshot of a physical network with
-the STT isolation type |
+.. figure:: /_static/images/nvp-physical-network-stt.png
+    :align: center
+    :alt: a screenshot of a physical network with the STT isolation type
 
 Enabling the service provider
 -----------------------------
@@ -110,8 +111,9 @@ isolation type. Navigate to the Nicira NVP provider and press the
     Nicira NVP plugin. Configuration needs to be done using the API
     directly.
 
-| nvp-physical-network-stt.png: a screenshot of an enabled Nicira NVP
-provider |
+.. figure:: /_static/images/nvp-physical-network-stt.png
+    :align: center
+    :alt: a screenshot of an enabled Nicira NVP provider
 
 Device Management
 -----------------
@@ -122,8 +124,9 @@ the Nicira NVP plugin a device needs to be added to the physical
 network. Press the "Add NVP Controller" button on the provider panel and
 enter the configuration details.
 
-| nvp-physical-network-stt.png: a screenshot of the device configuration
-popup. |
+.. figure:: /_static/images/nvp-physical-network-stt.png
+    :align: center
+    :alt: a screenshot of the device configuration popup.
 
 Network Offerings
 -----------------
@@ -160,7 +163,9 @@ Nicira NVP plugin.
 Table: Isolated network offering with regular services from the Virtual
 Router.
 
-| nvp-physical-network-stt.png: a screenshot of a network offering. |
+.. figure:: /_static/images/nvp-physical-network-stt.png
+    :align: center
+    :alt: a screenshot of a network offering.
 
     **Note**
 
@@ -225,7 +230,9 @@ It is also possible to update the default VPC offering by adding a row
 to the 'vpc\_offering\_service\_map' with service 'Connectivity' and
 provider 'NiciraNvp'
 
-| nvp-physical-network-stt.png: a screenshot of the mysql table. |
+.. figure:: /_static/images/nvp-physical-network-stt.png
+    :align: center
+    :alt: a screenshot of the mysql table.
 
     **Note**
 

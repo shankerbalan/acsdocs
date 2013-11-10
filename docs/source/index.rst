@@ -13,17 +13,15 @@ Installation Guide
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
-    installation_guide
+    networking/nicira-plugin 
 
 Developer's Guide
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     developer_guide
     prerequisites
