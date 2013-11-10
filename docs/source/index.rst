@@ -9,13 +9,14 @@ Welcome to CloudStack Documentation's !
 .. figure:: /_static/images/acslogo.png
     :align: center
 
-Installation Guide
+Networking Guides
 ------------------
 
 .. toctree::
     :maxdepth: 2
 
     networking/nicira-plugin 
+    networking/midonet
 
 Developer's Guide
 ------------------
