@@ -17,21 +17,20 @@ Overview and Concepts
 
     concepts
 
-Installation Guide
+Networking Guides
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
-    installation_guide
+    networking/nicira-plugin 
+    networking/midonet
 
 Developer's Guide
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     developer_guide
     prerequisites

@@ -16,8 +16,203 @@ version of CloudStack. This book is composed of the following sections:
 7. Testing the AWS API interface
 
 
+Prerequisites
+-------------
+
+In this section we'll look at installing the dependencies you'll need
+for Apache CloudStack development.
+
+On Ubuntu 12.04
+~~~~~~~~~~~~~~~
+
+First update and upgrade your system:
+
+::
+
+    apt-get update 
+    apt-get upgrade
+
+NTP might already be installed, check it with ``service ntp status``. If
+it's not then install NTP to synchronize the clocks:
+
+::
+
+    apt-get install openntpd
+
+Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
+
+::
+
+    apt-get install openjdk-6-jdk
+
+Install ``tomcat6``, note that the new version of tomcat on
+`Ubuntu <http://packages.ubuntu.com/precise/all/tomcat6>`__ is the
+6.0.35 version.
+
+::
+
+    apt-get install tomcat6
+
+Next, we'll install MySQL if it's not already present on the system.
+
+::
+
+    apt-get install mysql-server
+
+Remember to set the correct ``mysql`` password in the CloudStack
+properties file. Mysql should be running but you can check it's status
+with:
+
+::
+
+    service mysql status
+
+Developers wanting to build CloudStack from source will want to install
+the following additional packages. If you dont' want to build from
+source just jump to the next section.
+
+Install ``git`` to later clone the CloudStack source code:
+
+::
+
+    apt-get install git
+
+Install ``Maven`` to later build CloudStack
+
+::
+
+    apt-get install maven
+
+This should have installed Maven 3.0, check the version number with
+``mvn --version``
+
+A little bit of Python can be used (e.g simulator), install the Python
+package management tools:
+
+::
+
+    apt-get install python-pip python-setuptools
+
+Finally install ``mkisofs`` with:
+
+::
+
+    apt-get install genisoimage
+
+On centOS 6.4
+~~~~~~~~~~~~~
+
+First update and upgrade your system:
+
+::
+
+    yum -y update
+    yum -y upgrade
+
+If not already installed, install NTP for clock synchornization
+
+::
+
+    yum -y install ntp
+
+Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
+
+::
+
+    yum -y install java-1.6.0-openjdk
+
+Install ``tomcat6``, note that the version of tomcat6 in the default
+CentOS 6.4 repo is 6.0.24, so we will grab the 6.0.35 version. The
+6.0.24 version will be installed anyway as a dependency to cloudstack.
+
+::
+
+    wget https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.35/bin/apache-tomcat-6.0.35.tar.gz
+    tar xzvf apache-tomcat-6.0.35.tar.gz -C /usr/local
+
+Setup tomcat6 system wide by creating a file
+``/etc/profile.d/tomcat.sh`` with the following content:
+
+::
+
+    export CATALINA_BASE=/usr/local/apache-tomcat-6.0.35
+    export CATALINA_HOME=/usr/local/apache-tomcat-6.0.35
+
+Next, we'll install MySQL if it's not already present on the system.
+
+::
+
+    yum -y install mysql mysql-server
+
+Remember to set the correct ``mysql`` password in the CloudStack
+properties file. Mysql should be running but you can check it's status
+with:
+
+::
+
+    service mysqld status
+
+Install ``git`` to later clone the CloudStack source code:
+
+::
+
+    yum -y install git
+
+Install ``Maven`` to later build CloudStack. Grab the 3.0.5 release from
+the Maven `website <http://maven.apache.org/download.cgi>`__
+
+::
+
+    wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+    tar xzf apache-maven-3.0.5-bin.tar.gz -C /usr/local
+    cd /usr/local
+    ln -s apache-maven-3.0.5 maven
+
+Setup Maven system wide by creating a ``/etc/profile.d/maven.sh`` file
+with the following content:
+
+::
+
+    export M2_HOME=/usr/local/maven
+    export PATH=${M2_HOME}/bin:${PATH}
+
+Log out and log in again and you will have maven in your PATH:
+
+::
+
+    mvn --version
+
+This should have installed Maven 3.0, check the version number with
+``mvn --version``
+
+A little bit of Python can be used (e.g simulator), install the Python
+package management tools:
+
+::
+
+    yum -y install python-setuptools
+
+To install python-pip you might want to setup the Extra Packages for
+Enterprise Linux (EPEL) repo
+
+::
+
+    cd /tmp
+    wget http://mirror-fpt-telecom.fpt.net/fedora/epel/6/i386/epel-release-6-8.noarch.rpm
+    rpm -ivh epel-release-6-8.noarch.rpm
+
+Then update you repository cache ``yum update`` and install pip
+``yum -y install python-pip``
+
+Finally install ``mkisofs`` with:
+
+::
+
+    yum -y install genisoimage
+
+
 Installing from Source
-======================
+----------------------
 
 CloudStack uses git for source version control, if you know little about
 `git <http://book.git-scm.com/>`__ is a good start. Once you have git
@@ -68,7 +263,7 @@ Open your Web browser and use this URL to connect to CloudStack:
 
 Replace ``localhost`` with the IP of your management server if need be.
 
-**Note**: If you have iptables enabled, you may have to open the ports
+.. note:: If you have iptables enabled, you may have to open the ports
 used by CloudStack. Specifically, ports 8080, 8250, and 9090.
 
 You can now start configuring a Zone, playing with the API. Of course we
@@ -78,7 +273,7 @@ following section shows you how to use the simulator so that you don't
 have to setup a physical infrastructure.
 
 Using the Simulator
-===================
+-------------------
 
 CloudStack comes with a simulator based on Python bindings called
 *Marvin*. Marvin is available in the CloudStack source code or on Pypi.
@@ -134,7 +329,7 @@ advanced zone replace ``basic.cfg`` with ``advanced.cfg``.
 You can now run integration tests, use the API etc...
 
 Using DevCloud
-==============
+--------------
 
 The Installing from source section will only get you to the point of
 runnign the management server, it does not get you any hypervisors. The
@@ -170,7 +365,7 @@ with the VirtualBox image. For KVM see the
    ssh root@192.168.56.10
 
 Adding DevCloud as an Hypervisor
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Picking up from a clean build:
 
@@ -213,7 +408,7 @@ the management server within DevCloud as well, or memory granted, run
 multiple DevClouds.
 
 Building Packages
-=================
+-----------------
 
 Working from source is necessary when developing CloudStack. As
 mentioned earlier this is not primarily intended for users. However some
@@ -260,7 +455,7 @@ your own repo. Instructions on how to use this community repository are
 available in the installation book.
 
 The CloudStack API
-==================
+------------------
 
 The CloudStack API is a query based API using http that return results
 in XML or JSON. It is used to implement the default web UI. This API is
@@ -398,7 +593,7 @@ ability to use any of the API methods. It has nice auto-completion and
 help feature as well as an API discovery mechanism since 4.2.
 
 Testing the AWS API interface
-=============================
+-----------------------------
 
 While the native CloudStack API is not a standard, CloudStack provides a
 AWS EC2 compatible interface. It has the great advantage that existing
@@ -443,7 +638,7 @@ note that there was no user registration to make like in previous
 CloudStack releases.
 
 Conclusions
-===========
+-----------
 
 CloudStack is a mostly Java application running with Tomcat and Mysql.
 It consists of a management server and depending on the hypervisors
