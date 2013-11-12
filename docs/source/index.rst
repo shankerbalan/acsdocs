@@ -25,7 +25,6 @@ Quick Install Guide
 
     qig
 
-
 Networking Guides
 ------------------
 
@@ -42,7 +41,6 @@ Developer's Guide
     :maxdepth: 2
 
     developer_guide
-    prerequisites
 
 Indices and tables
 ==================

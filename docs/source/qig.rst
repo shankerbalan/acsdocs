@@ -33,13 +33,13 @@ To complete this runbook you'll need the following items:
 3. A /24 network with the gateway being at xxx.xxx.xxx.1, no DHCP should be on this network and none of the computers running CloudStack will have a dynamic address. Again this is done for the sake of simplicity.
 
 Environment
-============
+-----------
 
 Before you begin , you need to prepare the environment before you install CloudStack. We will go over the steps to
 prepare now.
 
 Operating System
-------------------
+~~~~~~~~~~~~~~~~
 
 Using the CentOS 6.4 x86_64 minimal install ISO, you'll need to install CentOS on your hardware. The defaults will
 generally be acceptable for this installation.
@@ -277,12 +277,12 @@ commands:
      # chkconfig nfs on
 
 Management Server Installation
-===============================
+------------------------------
 
 We're going to install the CloudStack management server and surrounding tools. 
 
 Database Installation and Configuration
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We'll start with installing MySQL and configuring some options to ensure it runs well with CloudStack. 
 
@@ -311,7 +311,7 @@ Now that MySQL is properly configured we can start it and configure it to start 
      # chkconfig mysqld on
 
 Installation
---------------
+~~~~~~~~~~~~
 
 We are now going to install the management server. We do that by executing the following command:
 
@@ -335,7 +335,7 @@ following command:
      # cloudstack-setup-management
 
 System Template Setup
-----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 CloudStack uses a number of system VMs to provide functionality for accessing the console of virtual machines,
 providing various networking services, and managing various aspects of storage. This step will acquire those system
@@ -354,14 +354,14 @@ That concludes our setup of the management server. We still need to configure Cl
 get our hypervisor set up.
 
 KVM Setup and Installation
-============================
+--------------------------
 
 KVM is the hypervisor we'll be using - we will recover the initial setup which has already been done on the hypervisor host
 and cover installation of the agent software, you can use the same steps to add additional KVM nodes to your CloudStack
 environment.
 
 Prerequisites
----------------
+~~~~~~~~~~~~~
 
 We explicitly are using the management server as a compute node as well, which means that we have already performed
 many of the prerequisite steps when setting up the management server, but we will list them here for clarity. Those steps
@@ -377,7 +377,7 @@ You shouldn't need to do that for the management server, of course, but any addi
 the above steps.
 
 Installation
---------------
+~~~~~~~~~~~~
 
 Installation of the KVM agent is trivial with just a single command, but afterwards we'll need to configure a few things.
 
@@ -437,13 +437,13 @@ That concludes our installation and configuration of KVM, and we'll now move to 
 configuration of our cloud.
 
 Configuration
-===============
+-------------
 
 As we noted before we will be using security groups to provide isolation and by default that implies that we'll be using a
 flat layer-2 network. It also means that the simplicity of our setup means that we can use the quick installer.
 
 UI Access
-------------
+~~~~~~~~~
 
 To get access to CloudStack's web interface, merely point your browser to http://172.16.10.2:8080/client The default
 username is 'admin', and the default password is 'password'. You should see a splash screen that allows you to choose
@@ -452,7 +452,7 @@ several options for setting up CloudStack. You should choose the Continue with B
 You should now see a prompt requiring you to change the password for the admin user. Please do so.
 
 Setting up a Zone
-------------------
+~~~~~~~~~~~~~~~~~
 
 A zone is the largest organization entity in CloudStack - and we'll be creating one, this should be the screen that you see
 in front of you now. And for us there are 5 pieces of information that we need.
@@ -472,7 +472,7 @@ in front of you now. And for us there are 5 pieces of information that we need.
      not add a namerserver setup to our list of requirements.
 
 Pod Configuration
-------------------
+~~~~~~~~~~~~~~~~~
 
 Now that we've added a Zone, the next step that comes up is a prompt for information regading a pod. Which is looking
 for several items.
@@ -486,7 +486,7 @@ for several items.
 7. Guest start/end IP - We'll use 172.16.10.30-172.16.10.200
 
 Cluster
----------
+~~~~~~~
 
 Now that we've added a Zone, we need only add a few more items for configuring the cluster.
 
@@ -500,7 +500,7 @@ You should be prompted to add the first host to your cluster at this point. Only
 3. Password - enter the operating system password for the root user
 
 Primary Storage
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 With your cluster now setup - you should be prompted for primary storage information. Choose NFS as the storage type
 and then enter the following values in the fields:
@@ -510,7 +510,7 @@ and then enter the following values in the fields:
 3. Path - Well define /primary as the path we are using
 
 Secondary Storage
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 If this is a new zone, you'll be prompted for secondary storage information - populate it as follows:
 
