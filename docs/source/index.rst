@@ -9,6 +9,23 @@ Welcome to CloudStack Documentation's !
 .. figure:: /_static/images/acslogo.png
     :align: center
 
+Overview and Concepts
+---------------------
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    concepts
+
+Quick Install Guide
+-------------------
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    qig
+
+
 Networking Guides
 ------------------
 

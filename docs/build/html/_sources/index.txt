@@ -6,12 +6,43 @@
 Welcome to CloudStack Documentation's !
 =======================================
 
-Contents:
+.. figure:: /_static/images/acslogo.png
+    :align: center
+
+Overview and Concepts
+---------------------
+.. toctree::
+    :glob:
+    :maxdepth: 3
+
+    concepts
+
+Quick Install Guide
+-------------------
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    qig
+
+
+Networking Guides
+------------------
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
+    networking/nicira-plugin 
+    networking/midonet
 
+Developer's Guide
+------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    developer_guide
+    prerequisites
 
 Indices and tables
 ==================
