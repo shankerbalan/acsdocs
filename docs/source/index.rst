@@ -16,8 +16,8 @@ Overview and Concepts
 
     concepts
 
-Quick Install Guide
--------------------
+Quick Install Guides
+--------------------
 .. toctree::
     :maxdepth: 2
 

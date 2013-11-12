@@ -1,9 +1,12 @@
-Overview
-=========
+Quick Installation Guide for CentOS
+===================================
 
+
+Overview
+--------
 
 What exactly are we building?
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Infrastructure-as-a-Service (IaaS) clouds can be a complex thing to build, and by definition they have a plethora of options,
 which often lead to confusion for even experienced admins who are newcomers to building cloud platforms. The goal for
@@ -12,7 +15,7 @@ amount of trouble.
 
 
 High level overview of the process
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This runbook will focus on building a CloudStack cloud using KVM with CentOS 6.4 with NFS storage on a flat layer-2
 network utilizing layer-3 network isolation (aka Security Groups), and doing it all on a single piece of hardware.
@@ -24,7 +27,7 @@ Security Groups act as distributed firewalls that control access to a group of v
 
 
 Prerequisites
---------------
+~~~~~~~~~~~~~
 
 To complete this runbook you'll need the following items:
 
@@ -51,7 +54,7 @@ finished the installation and configuration.
 .. _conf-network:
 
 Configuring the network
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 By default the network will not come up on your hardware and you will need to configure it to work in your environment.
 Since we specified that there will be no DHCP server in this environment we will be manually configuring your network
@@ -102,7 +105,7 @@ Now that we have the configuration files properly set up, we need to run a few c
 .. _conf-hostname:
 
 Hostname
-~~~~~~~~~~
+^^^^^^^^
 
 CloudStack requires that the hostname be properly set. If you used the default options in the installation, then your
 hostname is currently set to localhost.localdomain. To test this we will run:
@@ -137,7 +140,7 @@ Now recheck with the hostname --fqdn command and ensure that it returns a FQDN r
 .. _conf-selinux:
 
 SELinux
-~~~~~~~~~
+^^^^^^^
 
 At the moment, for CloudStack to work properly SELinux must be set to permissive. We want to both configure this for
 future boots and modify it in the current running system.
@@ -167,7 +170,7 @@ state, as shown in this example:
 .. _conf-ntp:
 
 NTP
-~~~~
+^^^
 
 NTP configuration is a necessity for keeping all of the clocks in your cloud servers in sync. However, NTP is not installed
 by default. So we'll install and and configure NTP at this stage. Installation is accomplished as follows:
@@ -187,7 +190,7 @@ follows:
 .. _qigconf-pkg-repo:
 
 Configuring the CloudStack Package Repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We need to configure the machine to use a CloudStack package repository. 
 
@@ -204,7 +207,7 @@ To add the CloudStack repository, create /etc/yum.repos.d/cloudstack.repo and in
     gpgcheck=0
 
 NFS
-----
+~~~
 
 Our configuration is going to use NFS for both primary and secondary storage. We are going to go ahead and setup two
 NFS shares for those purposes. We'll start out by installing nfs-utils.
@@ -500,7 +503,7 @@ You should be prompted to add the first host to your cluster at this point. Only
 3. Password - enter the operating system password for the root user
 
 Primary Storage
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 With your cluster now setup - you should be prompted for primary storage information. Choose NFS as the storage type
 and then enter the following values in the fields:
@@ -510,7 +513,7 @@ and then enter the following values in the fields:
 3. Path - Well define /primary as the path we are using
 
 Secondary Storage
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 If this is a new zone, you'll be prompted for secondary storage information - populate it as follows:
 
