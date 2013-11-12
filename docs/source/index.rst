@@ -12,16 +12,14 @@ Welcome to CloudStack Documentation's !
 Overview and Concepts
 ---------------------
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     concepts
 
 Quick Install Guide
 -------------------
 .. toctree::
-    :glob:
-    :maxdepth: 1
+    :maxdepth: 2
 
     qig
 
