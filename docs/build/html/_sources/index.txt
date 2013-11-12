@@ -17,21 +17,29 @@ Overview and Concepts
 
     concepts
 
-Installation Guide
+Quick Install Guide
+-------------------
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    qig
+
+
+Networking Guides
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
-    installation_guide
+    networking/nicira-plugin 
+    networking/midonet
 
 Developer's Guide
 ------------------
 
 .. toctree::
-    :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     developer_guide
     prerequisites

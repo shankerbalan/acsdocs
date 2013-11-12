@@ -17,6 +17,15 @@ Overview and Concepts
 
     concepts
 
+Quick Install Guide
+-------------------
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    qig
+
+
 Networking Guides
 ------------------
 
