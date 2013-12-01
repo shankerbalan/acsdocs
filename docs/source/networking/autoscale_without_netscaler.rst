@@ -23,7 +23,7 @@ Configuration
 
 Specify the following:
 
-.. image:: _static/images/autoscale-config.png
+.. image:: ../_static/images/autoscale-config.png
 
 * Template: A template consists of a base OS image and application. A template is used to provision the new instance of an application on a scaleup action. When a VM is deployed from a template, the VM can start taking the traffic from the load balancer without any admin intervention. For example, if the VM is deployed for a Web service, it should have the Web server running, the database connected, and so on.
 
