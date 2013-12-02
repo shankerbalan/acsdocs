@@ -72,7 +72,7 @@ traffic type.
     See KVM networking configuration guide for more detail.
 
 
-.. figure:: /_static/images/nvp-physical-network-stt.png //TODO: insert GRE image instead
+.. figure:: /_static/images/ovs-physical-network-gre.png
     :align: center
     :alt: a screenshot of a physical network with the GRE isolation type
 
@@ -144,7 +144,7 @@ Service Providers" configuration of the physical network with the GRE
 isolation type. Navigate to the OVS provider and press the
 "Enable Provider" button.
 
-.. figure:: /_static/images/nvp-physical-network-stt.png //TODO: insert GRE image instead
+.. figure:: /_static/images/ovs-physical-network-gre-enable.png
     :align: center
     :alt: a screenshot of an enabled OVS provider
 
@@ -183,7 +183,7 @@ OVS plugin.
 Table: Isolated network offering with regular services from the Virtual
 Router.
 
-.. figure:: /_static/images/nvp-physical-network-stt.png //TODO: insert GRE image instead
+.. figure:: /_static/images/ovs-network-offering.png
     :align: center
     :alt: a screenshot of a network offering.
 
