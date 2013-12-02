@@ -9,7 +9,7 @@ implementations in CloudStack, using GRE isolation method. The plugin can be use
 to provide additional services like NAT, port forwarding and load balancing.
 
 Features of the OVS Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following table lists the CloudStack network services provided by
 the OVS Plugin.
