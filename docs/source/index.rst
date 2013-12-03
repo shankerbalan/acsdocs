@@ -31,6 +31,7 @@ Networking Guides
 
     networking/nicira-plugin 
     networking/midonet
+    networking/ovs-plugin
     networking/autoscale_without_netscaler.rst
 
 Developer's Guide

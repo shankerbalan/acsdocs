@@ -65,11 +65,12 @@ CloudStack needs to have at least one physical network with the isolation
 method set to “GRE”. This network should be enabled for the Guest
 traffic type.
 
-.. note::    With KVM, the traffic type should be configured with the traffic label
-    that matches the name of the Integration Bridge on the hypervisor. For example, you should set the traffic label as following:
-    	- Management & Storage traffic: cloudbr0
-    	- Guest & Public traffic: cloudbr1
-    See KVM networking configuration guide for more detail.
+.. note::
+         With KVM, the traffic type should be configured with the traffic label
+         that matches the name of the Integration Bridge on the hypervisor. For example, you should set the traffic label as following:
+    	 - Management & Storage traffic: cloudbr0
+    	 - Guest & Public traffic: cloudbr1
+         See KVM networking configuration guide for more detail.
 
 
 .. figure:: /_static/images/ovs-physical-network-gre.png
