@@ -74,8 +74,6 @@ move it, but there’s no real problem with using the default location.
 Create yourself a little directory structure to get started with. The
 documentation recommends something like this:
 
-     |ansible1|                  
-
 
 Playbooks
 ---------
@@ -381,6 +379,7 @@ if you wish to.
 To run this go to the Ansible directory (cd /etc/ansible ) and run:
 
 ::
+
     # ansible-playbook deploy-cloudstack.yml -k
 
  ‘-k’ tells Ansible to ask you for the root password to connect to the
