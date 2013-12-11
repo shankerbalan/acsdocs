@@ -42,6 +42,7 @@ Developer's Guide
     :maxdepth: 2
 
     developer_guide
+    ansible
 
 Indices and tables
 ==================
