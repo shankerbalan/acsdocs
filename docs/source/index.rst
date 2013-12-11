@@ -15,7 +15,6 @@ Overview and Concepts
     :maxdepth: 2
 
     concepts
-    test
 
 Quick Install Guides
 --------------------
