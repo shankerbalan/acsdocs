@@ -1,5 +1,5 @@
-Troubleshooting Internet Internet Traffic
-=========================================
+Troubleshooting Internet Traffic
+================================
 
 Below are a few troubleshooting steps to check whats going wrong with your
 network...
