@@ -33,6 +33,7 @@ Networking Guides
     networking/midonet
     networking/ovs-plugin
     networking/autoscale_without_netscaler.rst
+    networking/troubleshoot_internet_traffic.rst
 
 Developer's Guide
 ------------------
